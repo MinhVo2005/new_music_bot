@@ -46,25 +46,22 @@ module.exports = {
         
         if(url.includes(' ')){
             const video = await getSearch(url)
-            console.log(video.slice(0,3))
-        }
-        else if (url.includes('list=') && !url.includes(' ')){ 
+            console.log('HI HERE IS AN ERROR')
+        }else if (url.includes('list=') && !url.includes(' ')){ 
             const links = await getLinks(url)
             for (const link of links){
                 const song = await getSearch(link)
                 if (!song[0]) {
-                    console.log(song)
+                    console.log('HEELLO')
                     return interaction.reply('There is an error adding this song')}
-                else{console.log(song)}
                 server_song.push(song[0])
             }
         }else{
             const song = await getSearch(url)
             if (!song[0]) {
-                console.log(song)
+                console.log('SOMETHING WENT WRONG')
                 return interaction.reply('There is an error adding this song')}
-            else{console.log(song)}
-                server_song.push(song[0])
+            server_song.push(song[0])
         }
         console.log("Song in queue:",queue.get(voiceChannel.guild.id)['song'])
         console.log('Song added')
