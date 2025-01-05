@@ -16,6 +16,5 @@ module.exports = {
         }
         connection.state.subscription.player.pause();
         await interaction.reply('Paused.');
-        console.log(connection.state.subscription.player.state.status)
     }
 }
