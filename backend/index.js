@@ -18,7 +18,7 @@ const client = new Client({
 //Get commands
 client.commands = getAllCommands
 //Update/ Deploy commands to server
-//deployCommands(client.commands)
+deployCommands(client.commands)
 
 const eventPath = path.join (__dirname, 'events');
 const eventFiles = fs.readdirSync(eventPath)

@@ -8,7 +8,7 @@ module.exports = async (commands) =>{
     try{
         console.log(`Start refreshing ${commands.size} commands`) // Remove afterward
         const data = await rest.put(
-            Routes.applicationGuildCommands(clientID),
+            Routes.applicationCommands(clientID),
             {body:(() =>{
                 const commandlist = []
                 for (const command of commands){

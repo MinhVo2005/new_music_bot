@@ -22,7 +22,7 @@ module.exports = {
                 // Respond with suggestions
                 await interaction.respond(suggestions);
             } catch (error) {
-                console.error('Error fetching YouTube search results:', error);
+                console.log('Error fetching YouTube search results:', error);
                 await interaction.respond([]);
             }
         }

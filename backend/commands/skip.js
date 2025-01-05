@@ -18,12 +18,15 @@ module.exports = {
         if (!connection || (connection.joinConfig.channelId != voiceChannel.id)) {
             return interaction.reply('The bot is not in this channel.');
         }
+        if(server_song.length >1){
+            await interaction.reply('Skipping to the next song.');
+        }else{
+            await interaction.reply('No more song left! ')
+        }
         try{
             connection.state.subscription.player.stop();
         }catch(error){'Failed to execute code on line 19 file: skip.js', error}
         
-        if(server_song.length !== 0){
-            await interaction.reply('Skipping to the next song.');
-        }
+        
     }
 }

@@ -56,6 +56,7 @@ module.exports = {
             }
         }
         else{
+            if(!url.includes('https:')) return interaction.reply({ content: 'You must choose a valid song or put the youtube url', ephemeral: true })
             server_song.push(url)
         }
         //Check if /play to add or to play song
